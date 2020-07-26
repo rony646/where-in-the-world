@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-import Header from '../src/Components/Header/Header'
+import Header from './Components/Header/Header'
+import Main from './Components/Main/Main'
 
 function App() {
 
-  // const [darkMode, setDarkMode] = useState(false)
+  let [darkMode, setDarkMode] = useState(false)
+
+  function setColorMode() {
+    setDarkMode(darkMode = !darkMode);
+    console.log(darkMode)
+  }
 
 
   return (
     <div className="App">
-      <Header></Header>
-      <div></div>
+      <Header isDark={darkMode} clicked={setColorMode}></Header>
+      <Main isDark={darkMode}/>
     </div>
   );
 }
