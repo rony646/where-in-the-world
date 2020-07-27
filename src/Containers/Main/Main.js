@@ -49,13 +49,7 @@ const Main = props => {
         <StyledDiv isDark={props.isDark}>
             <InputsContainer>
                 <Input changed={InputChangeHandler} isDark={props.isDark}/>
-                <select style={{marginRight: "35px"}} name="continents" onChange={(event) => InputChangeHandler(event)}>
-                    <option value="africa">Africa</option>
-                    <option value="americas">Americas</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
-                </select>
+                <Select changed={InputChangeHandler} isDark={props.isDark}/>
             </InputsContainer>
             <Countries />
         </StyledDiv>

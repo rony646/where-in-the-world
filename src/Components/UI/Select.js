@@ -3,12 +3,38 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSelect = styled.select`
-    margin-right: 35px;
+    position: relative;
+    color: inherit;
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 5px hsl(0, 0%, 13%);
+    padding: 0px 10px;
+    height: 45px;
+    width: 100px;
+    right: 35px;
+    > option {
+        height: 1000000px;
+    }
+
+    @media(max-width: 600px) {
+        top: 30px;
+        left: calc(33% - 50%);
+        right: 0px;
+        width: 50%;
+        align-self: center;
+    }
 `
 
 const Select = props => {
+
+    const color = props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 98%)" // Alternating bg color here cause it didn't work in styled components
+
     return(
-        <StyledSelect>
+        <StyledSelect name="continents" onChange={event => props.changed(event)} style={{backgroundColor: color}}>
+            <option value="">Filter by region</option>
             <option value="world">World</option>
             <option value="africa">Africa</option>
             <option value="americas">Americas</option>

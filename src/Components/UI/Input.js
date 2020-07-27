@@ -36,7 +36,7 @@ const Input = props => {
             <span className="fa fa-search"></span>
             <StyledInput 
                 type="text" 
-                placeholder="search for a country..." 
+                placeholder="Search for a country..." 
                 name="country"
                 onChange={e => props.changed(e)}
                 style={{backgroundColor: color}}>
