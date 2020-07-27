@@ -2,6 +2,7 @@ import React from 'react'
 
 import Countries from '../../Components/Countries/Countries'
 import Input from '../../Components/UI/Input'
+import Select from '../../Components/UI/Select'
 
 import styled from 'styled-components'
 
@@ -28,7 +29,13 @@ const InputsContainer = styled.div`
     justify-content: space-between;
     width: 100%;
     height: 80px;
-    padding: 0 0px;
+    padding: 20px 0px;
+
+    @media (max-width: 600px) {
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 `
 
 
@@ -41,7 +48,7 @@ const Main = props => {
     return(
         <StyledDiv isDark={props.isDark}>
             <InputsContainer>
-                <Input changed={InputChangeHandler}/>
+                <Input changed={InputChangeHandler} isDark={props.isDark}/>
                 <select style={{marginRight: "35px"}} name="continents" onChange={(event) => InputChangeHandler(event)}>
                     <option value="africa">Africa</option>
                     <option value="americas">Americas</option>
