@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Countries from '../../Components/Countries/Countries'
 import Input from '../../Components/UI/Input'
@@ -41,6 +41,15 @@ const InputsContainer = styled.div`
 
 const Main = props => {
 
+
+    let [countries, setCountries] = useState([]);
+
+    useEffect(() => {
+        console.log('HTTP REQUEST HERE');
+    }, [])
+
+   
+
     function InputChangeHandler(event) {
         console.log(event.target.value)
     }
@@ -51,7 +60,7 @@ const Main = props => {
                 <Input changed={InputChangeHandler} isDark={props.isDark}/>
                 <Select changed={InputChangeHandler} isDark={props.isDark}/>
             </InputsContainer>
-            <Countries />
+            <Countries isDark={props.isDark}/>
         </StyledDiv>
     )
 };

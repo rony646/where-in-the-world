@@ -11,6 +11,7 @@ const StyledSelect = styled.select`
     outline: none;
     border: none;
     box-shadow: 1px 1px 5px hsl(0, 0%, 13%);
+    border-radius: 5px;
     padding: 0px 10px;
     height: 45px;
     width: 100px;

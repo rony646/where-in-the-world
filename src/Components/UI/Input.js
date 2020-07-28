@@ -15,6 +15,7 @@ const StyledDiv = styled.div`
     display: flex;
     align-items: center;
     padding: 0px 10px;
+    border-radius: 5px;
     box-shadow: 1px 1px 5px hsl(0, 0%, 13%);
     margin-left: 35px;
     width: 300px;

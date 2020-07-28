@@ -6,7 +6,7 @@ import Main from './Containers/Main/Main'
 
 function App() {
 
-  let [darkMode, setDarkMode] = useState(false)
+  let [darkMode, setDarkMode] = useState(true)
 
   function setColorMode() {
     setDarkMode(darkMode = !darkMode);
