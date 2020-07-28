@@ -5,6 +5,7 @@ import Input from '../../Components/UI/Input'
 import Select from '../../Components/UI/Select'
 
 import styled from 'styled-components'
+import axios from '../../axios-config'
 
 const StyledDiv = styled.div`
     background: ${props => props.isDark ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 98%)"};
@@ -45,7 +46,13 @@ const Main = props => {
     let [countries, setCountries] = useState([]);
 
     useEffect(() => {
-        console.log('HTTP REQUEST HERE');
+        axios.get('/all')
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(err => {
+            alert('Something went wrong')
+        })
     }, [])
 
    
