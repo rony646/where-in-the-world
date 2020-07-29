@@ -69,7 +69,47 @@ const Main = props => {
     }, [])
 
     function fetchResults(query) {
-        console.log('Here i will filter the results!', ' Query: ', query)
+       if(query !== '') {
+        axios.get(`name/${query}`)
+        .then(res => {
+            const data = []
+            res.data.forEach(e => {
+                const countryData = {
+                    name: e["name"],
+                    capital: e["capital"],
+                    region: e["subregion"],
+                    population: e["population"],
+                    flag: e["flag"]
+                };
+
+                data.push(countryData);
+            })
+            setCountries(data)
+        })
+       } else {
+           return null;
+       }
+    }
+
+    function fetchResultsByRegion(query) {
+        const filterQuery = query === 'world' ? '/all' : `/region/${query}`
+
+        axios.get(filterQuery)
+        .then(res => {
+            const data = []
+            res.data.forEach(e => {
+                const countryData = {
+                    name: e["name"],
+                    capital: e["capital"],
+                    region: e["subregion"],
+                    population: e["population"],
+                    flag: e["flag"]
+                };
+
+                data.push(countryData);
+            })
+            setCountries(data)
+        })
     }
 
    
@@ -78,11 +118,15 @@ const Main = props => {
         fetchResults(event.target.value)
     }
 
+    function SelectChangeHandler(event) {
+        fetchResultsByRegion(event.target.value)
+    }
+
     return(
         <StyledDiv isDark={props.isDark}>
             <InputsContainer>
                 <Input changed={InputChangeHandler} isDark={props.isDark}/>
-                <Select changed={InputChangeHandler} isDark={props.isDark}/>
+                <Select changed={SelectChangeHandler} isDark={props.isDark}/>
             </InputsContainer>
             {countries ? <Countries isDark={props.isDark} countryData={countries}/> : <h1>Loading...</h1>}
         </StyledDiv>

@@ -35,7 +35,7 @@ const Select = props => {
 
     return(
         <StyledSelect name="continents" onChange={event => props.changed(event)} style={{backgroundColor: color}}>
-            <option value="">Filter by region</option>
+            <option value="world">Filter by region</option>
             <option value="world">World</option>
             <option value="africa">Africa</option>
             <option value="americas">Americas</option>
