@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Card = styled.div`
     position: relative;
     text-align: left;
-    height: 320px;
+    height: 340px;
     width: 240px;
     margin: 35px 37px;
     box-shadow: 1px 1px 5px black;
@@ -32,14 +32,15 @@ const Card = styled.div`
 const Country = props => {
 
     const color = props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 98%)"
+
     return(
         <Card style={{backgroundColor: color}}>
-            <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Ancap_flag.png" alt="flag" />
-            <h1>Brazil</h1>
+            <img src={props.flagUrl} alt="flag" />
+            <h1>{props.name}</h1>
             <p>
-                <strong>Population</strong>: 100.000 <br></br>
-                <strong>Region</strong>: World <br></br>
-                <strong>Capital</strong>: Anywhere
+                <strong>Population : </strong>{props.population}<br></br>
+                <strong>Region : </strong>{props.region}<br></br>
+                <strong>Capital : </strong>{props.capital}
             </p>
         </Card>
     );

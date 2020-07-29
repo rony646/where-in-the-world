@@ -43,22 +43,39 @@ const InputsContainer = styled.div`
 const Main = props => {
 
 
-    let [countries, setCountries] = useState([]);
+    let [countries, setCountries] = useState(null);
 
     useEffect(() => {
+
         axios.get('/all')
         .then(res => {
-            console.log(res.data);
+            const data = []
+            res.data.forEach(e => {
+                const countryData = {
+                    name: e["name"],
+                    capital: e["capital"],
+                    region: e["subregion"],
+                    population: e["population"],
+                    flag: e["flag"]
+                };
+
+                data.push(countryData);
+            })
+            setCountries(data)
         })
         .catch(err => {
             alert('Something went wrong')
         })
     }, [])
 
+    function fetchResults(query) {
+        console.log('Here i will filter the results!', ' Query: ', query)
+    }
+
    
 
     function InputChangeHandler(event) {
-        console.log(event.target.value)
+        fetchResults(event.target.value)
     }
 
     return(
@@ -67,7 +84,7 @@ const Main = props => {
                 <Input changed={InputChangeHandler} isDark={props.isDark}/>
                 <Select changed={InputChangeHandler} isDark={props.isDark}/>
             </InputsContainer>
-            <Countries isDark={props.isDark}/>
+            {countries ? <Countries isDark={props.isDark} countryData={countries}/> : <h1>Loading...</h1>}
         </StyledDiv>
     )
 };
