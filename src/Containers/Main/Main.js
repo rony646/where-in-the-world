@@ -17,7 +17,7 @@ const StyledDiv = styled.div`
     min-width: 100%;
     max-width: 100vw;
     position: relative;
-    transition: all 0.5s;
+    transition: none;
 
     @media (max-width: 600px) {
         min-height: calc(100vh - 75px);

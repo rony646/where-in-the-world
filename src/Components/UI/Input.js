@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import  '../../../node_modules/font-awesome/css/font-awesome.min.css'
 
 const StyledInput = styled.input`
+    position: relative;
+    width: 100%;
     color: inherit;
     font-family: inherit;
     border: none;

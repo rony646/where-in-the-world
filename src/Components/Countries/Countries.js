@@ -1,8 +1,10 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom'
 
 import styled from 'styled-components';
 
 import Card from './Country/Country'
+import CountryDetail from '../CountryDetail/CountryDetail'
 
 const StyledDiv = styled.div`
     display: flex;
@@ -33,6 +35,9 @@ const Countries = props => {
     return(
         <StyledDiv>
            {countries}
+           <Switch>
+              <Route path={`country/:name`} component={CountryDetail} />
+           </Switch>
         </StyledDiv>
     );
 };
