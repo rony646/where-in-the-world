@@ -39,7 +39,6 @@ const Card = styled.div`
 `
 
 const Country = props => {
-
     const color = props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 98%)"
 
     return(

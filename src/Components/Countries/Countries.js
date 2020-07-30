@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, NavLink, Link } from 'react-router-dom'
 
 import styled from 'styled-components';
 
@@ -22,14 +22,18 @@ const StyledDiv = styled.div`
 
 const Countries = props => {
 
+    console.log('[Countries.js]', props)
+
     const countries = props.countryData.map(country => {
-       return  <Card 
-                name={country.name}
-                population={country.population}
-                capital={country.capital}
-                region={country.region}
-                flagUrl={country.flag}
-                isDark={props.isDark}/>
+       return  <Link  key={country.name} to={`/country/${country.name}`} style={{color: "inherit", textDecoration: "none"}}>
+                    <Card 
+                    name={country.name}
+                    population={country.population}
+                    capital={country.capital}
+                    region={country.region}
+                    flagUrl={country.flag}
+                    isDark={props.isDark}/>
+               </Link>
     });
 
     return(
