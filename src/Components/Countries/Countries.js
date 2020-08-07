@@ -39,9 +39,6 @@ const Countries = props => {
     return(
         <StyledDiv>
            {countries}
-           <Switch>
-              <Route path={`country/:name`} component={CountryDetail} />
-           </Switch>
         </StyledDiv>
     );
 };

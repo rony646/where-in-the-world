@@ -7,10 +7,10 @@ const CountryDetail = props => {
 
     const countryName = props.match.params.country;  // Gets the country name via query param
 
-     const [countryData, setCountryData] = useState(undefined);
+    const [countryData, setCountryData] = useState(undefined);
+    
 
      useEffect(() => {
-        console.log('Requisição')
        axios.get(`name/${countryName}`)
         .then(res => {
 
@@ -38,7 +38,9 @@ const CountryDetail = props => {
     let showData;
 
     if(countryData) {
-        showData = <DetailCountryShow  
+        showData = <DetailCountryShow
+                    isDark={props.isDark}
+                    flag={countryData.flag}  
                     name={countryData.name}
                     nativeName={countryData.nativeName}
                     population={countryData.population}
