@@ -23,8 +23,7 @@ const DetailContainter = styled.div`
         flex-direction: column;
         align-items: flex-start;
         box-sizing: border-box;
-        padding: 0 20px;
-        /* background-color: blue; */
+        padding: 0 80px;
         height: 340px;
         width: 50%;
         > .details-container {
@@ -82,17 +81,21 @@ const DetailCountryShow = props => {
                         <h1>{props.name}</h1>
                         <div className="details-container">
                             <p>
-                                <span><strong>Mative Name</strong>: {props.nativeName}</span> 
-                                <span><strong>Population</strong>: {props.population}</span> 
-                                <span><strong>Region</strong>: {props.region}</span> 
-                                <span><strong>Sub Region</strong>: {props.subRegion}</span> 
-                                <span><strong>Capital</strong>: {props.capital}</span> 
+                                <span><strong>Mative Name: </strong>{props.nativeName}</span> 
+                                <span><strong>Population: </strong>{props.population}</span> 
+                                <span><strong>Region: </strong>{props.region}</span> 
+                                <span><strong>Sub Region: </strong>: {props.subRegion}</span> 
+                                <span><strong>Capital: </strong> {props.capital}</span> 
                             </p>
                             <p>
-                                <span><strong>Top Level Domain</strong>: {props.topLevelDomain}</span>
-                                <span><strong>Currencies</strong>: {props.currencies[0].name}</span>
+                                <span><strong>Top Level Domain: </strong> {props.topLevelDomain}</span>
+                                <span><strong>Currencies: </strong> 
+                                    {props.currencies.map(curr => {
+                                        return curr.name
+                                    }).join(', ')}
+                                </span>
                                 <span>
-                                    <strong>Languages</strong>: {
+                                    <strong>Languages: </strong> {
                                         props.languages.map(lang => {
                                             return lang.name
                                         }).join(', ') // Looking through the language array and showing it correctly
