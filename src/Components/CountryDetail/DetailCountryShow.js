@@ -5,8 +5,7 @@ import styled from 'styled-components'
 const Container = styled.div`
     margin: 30px auto;
     position: relative;
-    /* background: blue; */
-    height: 500px;
+    min-height: 80vh;
     width: 80%;
 
     @media(max-width: 600px) {
@@ -17,7 +16,7 @@ const Container = styled.div`
 const DetailContainter = styled.div`
     display: flex;
     align-items: center;
-    height: calc(100% - 80px);
+    height: 100%;
     .info-container {
         display: flex;
         flex-direction: column;
@@ -41,6 +40,7 @@ const DetailContainter = styled.div`
             }
         }
     }
+
     > img {
         height: 340px;
         width: 50%;
@@ -53,11 +53,16 @@ const DetailContainter = styled.div`
 
         .info-container {
             width: 100%;
+            padding: 0 15px;
+            .details-container {
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         > img {
-            height: 53%;
-            width: 100%;
+            height: 180px;
+            width: 300px;
         }
         
     }
@@ -104,7 +109,7 @@ const DetailCountryShow = props => {
                             </p>
                         </div>
                         <div>
-                            borders
+                            <h2>Border Countries: </h2>
                         </div>
                     </div>
                 </DetailContainter>
