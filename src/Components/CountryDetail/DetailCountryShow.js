@@ -25,6 +25,9 @@ const DetailContainter = styled.div`
         padding: 0 80px;
         height: 340px;
         width: 50%;
+        > .border-countries {
+            
+        }
         > .details-container {
             display: flex;
             position: relative;
@@ -57,6 +60,7 @@ const DetailContainter = styled.div`
             .details-container {
                 display: flex;
                 flex-direction: column;
+
             }
         }
 
@@ -108,8 +112,13 @@ const DetailCountryShow = props => {
                                 </span>
                             </p>
                         </div>
-                        <div>
+                        <div className="border-countries">
                             <h2>Border Countries: </h2>
+                            <ul className="borders">
+                                <span>ven</span>
+                                <span>kor</span>
+                                <span>chn</span>
+                            </ul>
                         </div>
                     </div>
                 </DetailContainter>
