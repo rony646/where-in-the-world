@@ -13,27 +13,12 @@ const CountryDetail = props => {
      useEffect(() => {
        axios.get(`name/${countryName}`)
         .then(res => {
-
-
-            // name : country['name'],
-            // nativeName: country['nativeName'],
-            // population: country['population'],
-            // region: country['region'],
-            // subRegion: country['subregion'],
-            // capital: country['capital'],
-            // topLevelDomain: country['topLevelDomain'],
-            // currencies: country['currencies'][0]['name'],
-            // languages: country['languages']
-
-
             setCountryData(res.data[0])
         
-           
-
         }).catch(e => {
             setCountryData(null)
         })
-    }, [])
+    }, [countryName])
 
     let showData;
 
@@ -50,10 +35,13 @@ const CountryDetail = props => {
                     topLevelDomain={countryData.topLevelDomain}
                     currencies={countryData.currencies}
                     languages={countryData.languages}
+                    borders={countryData.borders}
                     />
     } else {
         showData = <h1>Loading...</h1>
     }
+
+    console.log('COUNTRY DATA', countryData)
 
     return (
         <div>

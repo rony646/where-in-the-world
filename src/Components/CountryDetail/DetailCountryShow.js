@@ -8,6 +8,17 @@ const Container = styled.div`
     min-height: 80vh;
     width: 80%;
 
+    .btn-container {
+        display: flex;
+        align-items: center;
+        background-color: blue;
+        > .back-button {
+            text-align: left;
+            height: 35px;
+            width: 120px;
+        }
+    }
+
     @media(max-width: 600px) {
         min-height: 600px;
     }
@@ -16,6 +27,7 @@ const Container = styled.div`
 const DetailContainter = styled.div`
     display: flex;
     align-items: center;
+    /* background-color: green; */
     height: 100%;
     .info-container {
         display: flex;
@@ -26,7 +38,23 @@ const DetailContainter = styled.div`
         height: 340px;
         width: 50%;
         > .border-countries {
-            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            > .borders {
+                span {
+                    display: inline-block;
+                    box-shadow: 1px 1px  4px hsl(207, 26%, 17%);
+                    font-weight: 600;
+                    box-sizing: border-box;
+                    padding: 5px;
+                    margin: 3px;
+                    height: 30px;
+                    width: 80px;
+                }
+            }
         }
         > .details-container {
             display: flex;
@@ -78,14 +106,16 @@ const DetailCountryShow = props => {
 
     console.log('Detail Country', props)
 
+    const bgElementColor = props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+
     return(
         <div>
             <Container style={{color: props.isDark ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"}}>
-                <div style={{backgroundColor: "green", height: "60px"}}>
-                    <button>Back</button> {/* Must style this button later!*/}
+                <div style={{height: "60px"}} className="btn-container">
+                    <button className="back-button">Back</button> {/* Must style this button later!*/}
                 </div>
                 <DetailContainter>
-                    <img src={props.flag} />
+                    <img src={props.flag} alt="country flag"/>
                     <div className="info-container">
                         <h1>{props.name}</h1>
                         <div className="details-container">
@@ -97,7 +127,7 @@ const DetailCountryShow = props => {
                                 <span><strong>Capital: </strong> {props.capital}</span> 
                             </p>
                             <p>
-                                <span><strong>Top Level Domain: </strong> {props.topLevelDomain}</span>
+                                <span><strong>Top Level Domain: </strong> {props.topLevelDomain.join(', ')}</span>
                                 <span><strong>Currencies: </strong> 
                                     {props.currencies.map(curr => {
                                         return curr.name
@@ -113,12 +143,12 @@ const DetailCountryShow = props => {
                             </p>
                         </div>
                         <div className="border-countries">
-                            <h2>Border Countries: </h2>
-                            <ul className="borders">
-                                <span>ven</span>
-                                <span>kor</span>
-                                <span>chn</span>
-                            </ul>
+                            <h4>Border Countries: </h4>
+                            <div className="borders">
+                                {props.borders.map(country => {
+                                    return <span style={{backgroundColor: bgElementColor}}>{country}</span>
+                                })}
+                            </div>
                         </div>
                     </div>
                 </DetailContainter>
