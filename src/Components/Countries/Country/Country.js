@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Card = styled.div`
     position: relative;
     text-align: left;
-    height: 355px;
+    height: 370px;
     width: 240px;
     margin: 35px 37px;
     box-shadow: 1px 1px 5px black;

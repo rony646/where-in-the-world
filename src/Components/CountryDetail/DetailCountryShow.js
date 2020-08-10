@@ -1,7 +1,27 @@
 import React from 'react'
 
+import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 
+import '../../../node_modules/font-awesome/css/font-awesome.min.css'
+
+
+const BackButton = styled.button`
+    font-family: inherit;
+    border-radius: 3px;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    box-shadow: 1px 1px  4px hsl(207, 26%, 17%);
+    height: 35px;
+    width: 120px;
+    transition: all 0.3s;
+
+    &:hover, &:active {
+        box-shadow: 3px 3px 10px #3b5064;
+        font-size: 15px;
+    }
+`
 const Container = styled.div`
     margin: 30px auto;
     position: relative;
@@ -11,12 +31,6 @@ const Container = styled.div`
     .btn-container {
         display: flex;
         align-items: center;
-        background-color: blue;
-        > .back-button {
-            text-align: left;
-            height: 35px;
-            width: 120px;
-        }
     }
 
     @media(max-width: 600px) {
@@ -106,13 +120,20 @@ const DetailCountryShow = props => {
 
     console.log('Detail Country', props)
 
-    const bgElementColor = props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)"
+    function goBackHandler() {
+        props.history.push('/')
+    }
+
+    const bgElementColor = props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)";
+    const fontColor=  props.isDark ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)";
 
     return(
         <div>
             <Container style={{color: props.isDark ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)"}}>
                 <div style={{height: "60px"}} className="btn-container">
-                    <button className="back-button">Back</button> {/* Must style this button later!*/}
+                    <BackButton onClick={goBackHandler} style={{backgroundColor: bgElementColor, color: fontColor}}>
+                        <span className="fa fa-arrow-left" style={{padding: "0 8px"}}></span>Back
+                    </BackButton> {/* Must style this button later!*/}
                 </div>
                 <DetailContainter>
                     <img src={props.flag} alt="country flag"/>
@@ -146,7 +167,7 @@ const DetailCountryShow = props => {
                             <h4>Border Countries: </h4>
                             <div className="borders">
                                 {props.borders.map(country => {
-                                    return <span style={{backgroundColor: bgElementColor}}>{country}</span>
+                                    return <span  key={country} style={{backgroundColor: bgElementColor}}>{country}</span>
                                 })}
                             </div>
                         </div>
@@ -158,4 +179,4 @@ const DetailCountryShow = props => {
     )
 };
 
-export default DetailCountryShow;
+export default withRouter(DetailCountryShow);
