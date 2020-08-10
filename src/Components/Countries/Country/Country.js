@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components'
+import millify from 'millify'
 
 const Card = styled.div`
     position: relative;
@@ -46,7 +47,7 @@ const Country = props => {
             <img src={props.flagUrl} alt="flag" />
             <h1>{props.name}</h1>
             <p>
-                <span><strong>Population : </strong>{props.population}</span><br></br>
+                <span><strong>Population : </strong>{millify(props.population)}</span><br></br>
                 <span><strong>Region : </strong>{props.region}</span><br></br>
                 <span><strong>Capital : </strong>{props.capital}</span>
             </p>

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
+import millify from 'millify'
 
 import '../../../node_modules/font-awesome/css/font-awesome.min.css'
 
@@ -133,7 +134,7 @@ const DetailCountryShow = props => {
                 <div style={{height: "60px"}} className="btn-container">
                     <BackButton onClick={goBackHandler} style={{backgroundColor: bgElementColor, color: fontColor}}>
                         <span className="fa fa-arrow-left" style={{padding: "0 8px"}}></span>Back
-                    </BackButton> {/* Must style this button later!*/}
+                    </BackButton>
                 </div>
                 <DetailContainter>
                     <img src={props.flag} alt="country flag"/>
@@ -142,7 +143,7 @@ const DetailCountryShow = props => {
                         <div className="details-container">
                             <p>
                                 <span><strong>Mative Name: </strong>{props.nativeName}</span> 
-                                <span><strong>Population: </strong>{props.population}</span> 
+                                <span><strong>Population: </strong>{millify(props.population)}</span> 
                                 <span><strong>Region: </strong>{props.region}</span> 
                                 <span><strong>Sub Region: </strong>: {props.subRegion}</span> 
                                 <span><strong>Capital: </strong> {props.capital}</span> 
