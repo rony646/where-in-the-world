@@ -21,6 +21,8 @@ const StyledDiv = styled.div`
 
 const Countries = props => {
 
+    console.log('[Countries.js]', props)
+
     const countries = props.countryData.map(country => {
        return  <Link  key={country.name} to={`/country/${country.name}`} style={{color: "inherit", textDecoration: "none"}}>
                     <Card 

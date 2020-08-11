@@ -25,7 +25,7 @@ function App() {
          
           <Route exact path="/" render={() => (<Main isDark={darkMode} />)} />
           <Route exact path={`/country/:country`} render={(props) => <CountryDetail {...props} isDark={darkMode} />} />
-          <Route render={() => <h1 style={{color: darkMode ? "white" : "black"}}>Anything to show here :(</h1>} /> {/* Catching unknow routes */}
+          <Route render={() => <h1>Anything to show here :(</h1>} /> {/* Catching unknow routes */}
       </Switch>
     </div>
   );

@@ -14,7 +14,7 @@ const StyledSelect = styled.select`
     border-radius: 5px;
     padding: 0px 10px;
     height: 45px;
-    width: 150px;
+    width: 100px;
     right: 35px;
     > option {
         height: 1000000px;

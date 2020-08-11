@@ -11,7 +11,6 @@ const Card = styled.div`
     margin: 35px 37px;
     box-shadow: 1px 1px 5px black;
     border-radius: 5px;
-    transition: box-shadow 0.3s;
     > img {
         width: 100%;
         height: 50%;
@@ -33,10 +32,6 @@ const Card = styled.div`
     > h1 {
         padding-left: 32px;
         font-size: 18px;
-    }
-
-    &:hover {
-        box-shadow: 3px 3px 10px #3b5064;
     }
 
     @media(max-width: 600px) {
