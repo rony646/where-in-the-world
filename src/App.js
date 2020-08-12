@@ -12,7 +12,6 @@ function App() {
 
   function setColorMode() {
     setDarkMode(darkMode = !darkMode);
-    console.log(darkMode)
   }
 
   document.bgColor = darkMode ? "#2b3945" : "#fafafa"

@@ -87,6 +87,9 @@ const Main = props => {
             })
             setCountries(data)
         })
+        .catch(e => {
+            return console.log('Nothing found!')
+        })
        } else {
            return null;
        }

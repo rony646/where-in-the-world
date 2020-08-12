@@ -42,8 +42,6 @@ const CountryDetail = props => {
         showData = <Loader isDark={props.isDark} />
     }
 
-    console.log('COUNTRY DATA', countryData)
-
     return (
         <div>
             {showData}

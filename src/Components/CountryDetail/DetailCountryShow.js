@@ -119,8 +119,6 @@ const DetailContainter = styled.div`
 
 const DetailCountryShow = props => {
 
-    console.log('Detail Country', props)
-
     function goBackHandler() {
         props.history.push('/')
     }
