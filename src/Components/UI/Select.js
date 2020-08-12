@@ -34,7 +34,7 @@ const Select = props => {
     const color = props.isDark ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 98%)" // Alternating bg color here cause it didn't work in styled components
 
     return(
-        <StyledSelect name="continents" onChange={event => props.changed(event)} style={{backgroundColor: color}}>
+        <StyledSelect title="filter by region" name="continents" onChange={event => props.changed(event)} style={{backgroundColor: color}}>
             <option value="world">Filter by region</option>
             <option value="world">World</option>
             <option value="africa">Africa</option>
