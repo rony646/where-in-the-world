@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from '../../axios-config';
 
 import DetailCountryShow from './DetailCountryShow'
+import Loader from '../UI/Loader'
 
 const CountryDetail = props => {
 
@@ -38,7 +39,7 @@ const CountryDetail = props => {
                     borders={countryData.borders}
                     />
     } else {
-        showData = <h1>Loading...</h1>
+        showData = <Loader isDark={props.isDark} />
     }
 
     console.log('COUNTRY DATA', countryData)

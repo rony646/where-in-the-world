@@ -88,8 +88,8 @@ const DetailContainter = styled.div`
     }
 
     > img {
-        height: 340px;
-        width: 50%;
+        height: 320px;
+        width: 480px;
     }
 
    

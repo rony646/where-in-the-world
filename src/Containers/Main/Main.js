@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Countries from '../../Components/Countries/Countries'
 import Input from '../../Components/UI/Input'
 import Select from '../../Components/UI/Select'
+import Loader from '../../Components/UI/Loader'
 
 import styled from 'styled-components'
 import axios from '../../axios-config'
@@ -128,7 +129,7 @@ const Main = props => {
                 <Input changed={InputChangeHandler} isDark={props.isDark}/>
                 <Select changed={SelectChangeHandler} isDark={props.isDark}/>
             </InputsContainer>
-            {countries ? <Countries isDark={props.isDark} countryData={countries}/> : <h1>Loading...</h1>}
+            {countries ? <Countries isDark={props.isDark} countryData={countries}/> : <Loader isDark={props.isDark}/>}
         </StyledDiv>
     )
 };
