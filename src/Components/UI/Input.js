@@ -42,6 +42,7 @@ const Input = props => {
                 placeholder="Search for a country..." 
                 name="country"
                 onChange={e => props.changed(e)}
+                title="search for country"
                 style={{backgroundColor: color}}>
             </StyledInput>
         </StyledDiv>
