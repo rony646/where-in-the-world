@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from '../../axios-config';
 
 import DetailCountryShow from './DetailCountryShow'
-import Loader from '../UI/Loader'
+import Loader from '../UI/Loader/Loader'
 
 const CountryDetail = props => {
 

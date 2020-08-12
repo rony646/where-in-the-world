@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Countries from '../../Components/Countries/Countries'
 import Input from '../../Components/UI/Input'
 import Select from '../../Components/UI/Select'
-import Loader from '../../Components/UI/Loader'
+import Loader from '../../Components/UI/Loader/Loader'
 
 import styled from 'styled-components'
 import axios from '../../axios-config'
