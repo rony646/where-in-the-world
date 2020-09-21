@@ -140,7 +140,7 @@ const DetailCountryShow = props => {
                         <h1>{props.name}</h1>
                         <div className="details-container">
                             <p>
-                                <span><strong>Mative Name: </strong>{props.nativeName}</span> 
+                                <span><strong>Native Name: </strong>{props.nativeName}</span> 
                                 <span><strong>Population: </strong>{millify(props.population)}</span> 
                                 <span><strong>Region: </strong>{props.region}</span> 
                                 <span><strong>Sub Region: </strong>: {props.subRegion}</span> 
