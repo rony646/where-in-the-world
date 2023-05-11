@@ -53,3 +53,5 @@ The Input component is used as a the searchbar the text on it is sent to the api
     <Input isDark changed={() => {}}/>
 </Playground>
 
+    
+    
